@@ -1,0 +1,7 @@
+*.phar
+
+vendor/
+bin/
+build/
+
+.idea/

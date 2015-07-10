@@ -1,0 +1,20 @@
+{
+  "name": "scaytrase/symfony-survey-bundle",
+  "description": "Simple surveys",
+  "minimum-stability": "stable",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Pavel Batanov",
+      "email": "pavel@batanov.me"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "": "src/"
+    }
+  },
+  "require": {
+    "scaytrase/symfony-stored-forms-bundle": "~3.0"
+  }
+}

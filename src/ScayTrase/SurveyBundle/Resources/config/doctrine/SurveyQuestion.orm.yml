@@ -1,0 +1,20 @@
+ScayTrase\SurveyBundle\Entity\SurveyQuestion:
+  type: entity
+  inheritanceType: SINGLE_TABLE
+  id:
+      id:
+          type: integer
+          id: true
+          generator:
+              strategy: IDENTITY
+  fields:
+    weight:
+      type: integer
+
+  manyToOne:
+    field:
+      targetEntity: ScayTrase\StoredFormsBundle\Entity\Field\AbstractField
+
+    survey:
+      targetEntity: ScayTrase\SurveyBundle\Entity\Survey
+      inversedBy: questions

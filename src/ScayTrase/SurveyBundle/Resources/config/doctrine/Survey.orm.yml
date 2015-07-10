@@ -1,0 +1,40 @@
+ScayTrase\SurveyBundle\Entity\Survey:
+  type: entity
+  inheritanceType: SINGLE_TABLE
+  id:
+      id:
+          type: integer
+          id: true
+          generator:
+              strategy: IDENTITY
+  fields:
+    alias:
+      type: string
+    title:
+      type: string
+      nullable: true
+    public:
+      type: boolean
+    editAllowed:
+      type: boolean
+    locked:
+      type: boolean
+
+  oneToMany:
+
+    questions:
+      targetEntity: ScayTrase\SurveyBundle\Entity\SurveyQuestion
+      mappedBy: survey
+      cascade: [all]
+      orderBy:
+        weight: ASC
+
+    results:
+      targetEntity: ScayTrase\SurveyBundle\Entity\SurveyResult
+      mappedBy: survey
+      orderBy:
+        timeUpdated: DESC
+
+  manyToOne:
+    owner:
+      targetEntity: Symfony\Component\Security\Core\User\UserInterface

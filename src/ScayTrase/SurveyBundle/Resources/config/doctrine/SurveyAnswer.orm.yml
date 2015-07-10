@@ -1,0 +1,18 @@
+ScayTrase\SurveyBundle\Entity\SurveyAnswer:
+  type: entity
+  id:
+    value:
+        associationKey: true
+    parent:
+        associationKey: true
+
+  oneToOne:
+    value:
+      targetEntity: ScayTrase\StoredFormsBundle\Entity\Value\AbstractValue
+      cascade: [all]
+      fetch: EAGER
+
+  manyToOne:
+    parent:
+      targetEntity: ScayTrase\SurveyBundle\Entity\SurveyResult
+      inversedBy: answers

@@ -1,0 +1,32 @@
+ScayTrase\SurveyBundle\Entity\SurveyResult:
+  type: entity
+  inheritanceType: SINGLE_TABLE
+  id:
+      id:
+          type: integer
+          id: true
+          generator:
+              strategy: IDENTITY
+  indexes:
+    time:
+      columns: [timeUpdated]
+  fields:
+    timeCreated:
+      type: datetime
+    timeUpdated:
+      type: datetime
+  oneToMany:
+    answers:
+      targetEntity: ScayTrase\SurveyBundle\Entity\SurveyAnswer
+      mappedBy: parent
+      orphanRemoval: true
+      cascade: [all]
+      fetch: EAGER
+
+  manyToOne:
+    survey:
+      targetEntity: ScayTrase\SurveyBundle\Entity\Survey
+      inversedBy: results
+    author:
+      targetEntity: Symfony\Component\Security\Core\User\UserInterface
+

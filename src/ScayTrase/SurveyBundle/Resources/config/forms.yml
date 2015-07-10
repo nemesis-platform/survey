@@ -1,0 +1,14 @@
+services:
+  scaytrase.form_type.survey:
+    class: ScayTrase\SurveyBundle\Form\Type\SurveyType
+    arguments:
+      - @security.token_storage
+      - @doctrine.orm.entity_manager
+    tags:
+    - { name: form.type, alias: survey }
+
+
+  scaytrase.form_type.survey_form:
+    class: ScayTrase\SurveyBundle\Form\Type\SurveyFormType
+    tags:
+    - { name: form.type, alias: survey_form }
