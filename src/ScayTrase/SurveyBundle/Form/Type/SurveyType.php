@@ -119,7 +119,9 @@ class SurveyType extends AbstractType
                 /** @var SurveyResult $result */
                 $result = $event->getData();
                 $result->setSurvey($survey);
-                $result->setAuthor($user);
+                if ($user instanceof UserInterface) {
+                    $result->setAuthor($user);
+                }
 
                 $result->setTimeUpdated(new \DateTime());
 
